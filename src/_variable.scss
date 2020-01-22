@@ -1,0 +1,21 @@
+$fontXS: 8px;
+$fontS: 12px;
+$fontM: 14px;
+$fontL: 16px;
+$fontXL: 20px;
+$fontfamily:'Nunito Sans', sans-serif;
+$button-color: #f9423a;
+$cart-color: #a23530;
+$primary-color: #424749;
+$secondary-color: #6e7679;
+$background-color: #e2e4e4;
+$outline-color: #f1f1f2;
+@mixin shadow{
+    box-shadow: 0 8px 10px 0 rgba(10, 31, 68, 0.1);
+}
+@mixin flexbox($dir: row, $justify: center, $align: center){
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $justify;
+    align-items: $align;
+}
