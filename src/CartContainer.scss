@@ -1,0 +1,31 @@
+@import 'variable';
+.cart-container{
+    @include flexbox($align: flex-start);
+    height: 80px;
+    z-index: 2;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0),#ffffff);
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    & button{
+        border-radius: 8px;
+        width: 95%;
+        @include flexbox($justify:space-between);
+        padding: 16px;
+        border: none;
+        background-color: $cart-color;
+        & div p{
+            text-align: left;
+            color: #fff;
+            font-size: $fontM;
+        }
+        & div p:first-child{
+            font-weight: bolder;
+            font-size: $fontL;
+        }
+        & svg{
+            fill: #fff;
+        }
+    }
+}
