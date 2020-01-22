@@ -1,0 +1,68 @@
+@import 'variable';
+.food-card{
+    border-radius: 16px;
+    @include shadow;
+    margin: 24px 0;
+}
+.food-content{
+    padding: 8px 16px 16px 16px;
+    & h3{
+        font-size: $fontXL;
+        color: $primary-color;
+        margin: 8px 0;
+    }
+    & div:nth-child(2){
+        & p {
+            font-size: $fontM;
+            color: $secondary-color;
+            margin-bottom: 16px;
+        }
+    }
+}
+.food-picture{
+    width: 100%;
+    height: 90vw;
+    border-radius: 16px 16px 0 0;
+    background-image: url("img/salad.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+.price-container{
+    @include flexbox($justify:space-between);
+    & > p{
+        color: $primary-color;
+        font-weight: bolder;
+    }
+    & button{
+        @include flexbox($justify:space-between);
+        border: none;
+        background-color: $button-color;
+        padding: 8px 24px;
+        border-radius: 4px;
+        & p{
+            font-weight: bolder;
+            color: #fff;
+            font-size: $fontM;
+            margin-right: 4px;
+        }
+        & svg{
+            fill: #fff;
+        }
+    }
+}
+.rating-container{
+    @include flexbox($justify:flex-start);
+    & p{
+        font-size: $fontL;
+        margin-right: 8px;
+        color: $secondary-color;
+        font-weight: bolder;
+    }
+    & div{
+        @include flexbox;
+        height: 32px;
+        & svg{
+            fill: $button-color;
+        }
+    }
+}
