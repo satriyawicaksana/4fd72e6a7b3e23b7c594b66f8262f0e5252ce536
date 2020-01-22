@@ -1,0 +1,294 @@
+@import 'variable';
+/* .header{
+    height: 100px;
+} */
+.address-container{
+    @include flexbox($justify: start);
+    padding: 10px 0;
+    & p{
+        color: $secondary-color;
+        font-size: $fontS;
+    }
+}
+.address-button{
+    @include flexbox;
+    background-color: #fff;
+    border: none;
+    & p{
+        color: $primary-color;
+        font-weight: bolder;
+        font-size: $fontL
+    }
+}
+.back-arrow{
+    @include flexbox;
+    min-width: 50px;
+    fill: $primary-color;
+}
+.down-arrow{
+    fill: $button-color;
+}
+
+.date-container{
+    overflow-x: auto;
+    white-space: nowrap;
+    & ul{
+        list-style-type: none;
+    }
+    & li{
+        display: inline-flex;
+    }
+    & button{
+        width: 16.67vw;
+        height: 16.67vw;
+        border-radius: 50%;
+        border: none;
+        @include flexbox($dir: column);
+        background-color: rgba(255, 255, 255, 0);
+        & p:first-child{
+            font-size: $fontS;
+        }
+        & p:last-child{
+            font-size: $fontL;
+            font-weight: bolder;
+        }
+    }
+    .btn-active{
+        background-color: $primary-color;
+        color: #fff;
+    }
+    
+}
+
+.date-wrapper{
+    position: fixed;
+    left: 0;
+    width: 100%;
+    overflow-x: auto;
+    @include flexbox;
+    white-space: nowrap;
+    & ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    & li{
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        background-color: $primary-color;
+        & p:first-child{
+            font-size: $fontS;
+        }
+        & p:last-child{
+            font-size: $fontL;
+            font-weight: bolder;
+        }
+        & p{
+            color: #fff;
+        }
+    }
+}
+
+.time-selector{
+    @include flexbox;
+    margin: 16px 0;
+    & button{
+        width: 45%;
+        padding: 8px 0;
+        @include flexbox;
+        background-color: #fff;
+        border: 1px solid $outline-color;
+        color: $secondary-color;
+        font-size: $fontM;
+    }
+    & button:first-child{
+        border-radius: 8px 0 0 8px;
+    }
+    & .active{
+        background-color: $primary-color;
+        color: #fff;
+    }
+}
+
+.main-container{
+    padding:0 5%;
+}
+.date p{
+    font-size: $fontXL;
+    font-weight: bolder;
+    margin: 16px 0;
+}
+.food-card{
+    border-radius: 16px;
+    @include shadow;
+}
+.food-content{
+    padding: 8px 16px 16px 16px;
+    & h3{
+        font-size: $fontXL;
+        color: $primary-color;
+        margin: 8px 0;
+    }
+    & div:nth-child(2){
+        & p {
+            font-size: $fontM;
+            color: $secondary-color;
+            margin-bottom: 16px;
+        }
+    }
+}
+.food-picture{
+    width: 100%;
+    height: 90vw;
+    border-radius: 16px 16px 0 0;
+    background-image: url("img/salad.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+.price-container{
+    @include flexbox($justify:space-between);
+    & > p{
+        color: $primary-color;
+        font-weight: bolder;
+    }
+    & button{
+        @include flexbox($justify:space-between);
+        border: none;
+        background-color: $button-color;
+        padding: 8px 24px;
+        border-radius: 4px;
+        & p{
+            font-weight: bolder;
+            color: #fff;
+            font-size: $fontM;
+            margin-right: 4px;
+        }
+        & svg{
+            fill: #fff;
+        }
+    }
+}
+.rating-container{
+    @include flexbox($justify:flex-start);
+    & p{
+        font-size: $fontL;
+        margin-right: 8px;
+        color: $secondary-color;
+        font-weight: bolder;
+    }
+    & div{
+        @include flexbox;
+        height: 32px;
+        & svg{
+            fill: $button-color;
+        }
+    }
+}
+
+.cart-container{
+    @include flexbox($align: flex-start);
+    height: 80px;
+    z-index: 2;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0),#ffffff);
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    & button{
+        border-radius: 8px;
+        width: 95%;
+        @include flexbox($justify:space-between);
+        padding: 16px;
+        border: none;
+        background-color: $cart-color;
+        & div p{
+            text-align: left;
+            color: #fff;
+            font-size: $fontM;
+        }
+        & div p:first-child{
+            font-weight: bolder;
+            font-size: $fontL;
+        }
+        & svg{
+            fill: #fff;
+        }
+    }
+}
+
+.search-container{
+    background-color: rgba(0,0,0,0.5);
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+.search-wrapper{
+    background-color: #fff;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border-radius: 8px 8px 0 0;
+    @include flexbox($dir:column);
+ 
+}
+.close-div{
+    @include flexbox($justify:flex-end);
+    padding: 24px 16px;
+    width: 100%;
+}
+.search-title{
+    font-size: $fontXL;
+    font-weight: bolder;
+    margin: 8px 16px;
+    color: $primary-color;
+}
+.search-input-wrapper, .result-wrapper{
+    @include flexbox;
+    padding: 0 8px;
+    margin: 8px 0;
+}
+.search-input-wrapper{
+    border: 2px solid $outline-color;
+    border-radius: 8px;
+}
+.search-svg, .result-svg{
+    width: 32px;
+    height: 32px;
+    @include flexbox;
+}
+.search-svg{
+    fill: $button-color;
+}
+.result-svg{
+    fill: $secondary-color;
+    background-color: $background-color;
+    border-radius: 50%;
+}
+.search-input, .result-address{
+    width: 80vw;
+    padding: 8px;
+}
+
+.search-input{
+    outline: none;
+    border: none;
+    font-size: $fontXL;
+    font-weight: bolder;
+    color: $primary-color;
+}
+.result-address{
+    border-bottom: 1px solid $outline-color;
+    & p:first-child{
+        font-size: $fontXL;
+        font-weight: bolder;
+        color: $primary-color;
+    }
+    & p:last-child{
+        font-size: $fontL;
+        color: $primary-color;
+    }
+}
