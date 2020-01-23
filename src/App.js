@@ -16,10 +16,33 @@ class App extends React.Component {
       displayCart: 'none',
       displaySearch: false,
       searchValue: '',
-      displayResult: false
+      displayResult: false,
+      lunch: true
     }
   }
-
+  bulan = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+  hari = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+  hariSingkat = ["MIN", "SEN", "SEL", "RAB", "KAM", "JUM", "SAB"];
+  get2Week = () => {
+    const datepicker = [];
+    const element = [];
+    let dateNow = new Date();
+    let firstDay = true;
+    for (let i = 0; i < 12; i++) {
+      element.push(
+        <li key={i}>
+          <button className={firstDay ? 'btn-active' : ''} disabled={dateNow.getDay() === 0 || dateNow.getDay() === 6 ? true : false}>
+            <p>{this.hariSingkat[dateNow.getDay()]}</p>
+            <p>{dateNow.getDate()}</p>
+          </button>
+        </li>
+      );
+      firstDay = false;
+      dateNow = new Date(Date.now() + (1000 * 60 * 60 * 24 * (i + 1)));
+    }
+    datepicker.push(<ul>{element}</ul>);
+    return datepicker;
+  }
   renderCart = () => {
     this.setState({ displayCart: 'flex' });
   }
@@ -33,6 +56,16 @@ class App extends React.Component {
     this.setState({ searchValue: event.target.value }, () => {
       this.state.searchValue.length >= 3 ? this.setState({ displayResult: true }) : this.setState({ displayResult: false });
     });
+  }
+  setDinner = () => {
+    this.setState({ lunch: false });
+  }
+  setLunch = () => {
+    this.setState({ lunch: true });
+  }
+  getDateNow = () => {
+    const dateNow = new Date();
+    return `${this.hari[dateNow.getDay()]}. ${dateNow.getDate()} ${this.bulan[dateNow.getMonth()]} ${dateNow.getFullYear()}`;
   }
   render() {
     return (
@@ -53,89 +86,16 @@ class App extends React.Component {
             </div>
           </div>
           <div className="date-container">
-            <ul>
-              <li>
-                <button>
-                  <p className="day">SEN</p>
-                  <p>10</p>
-                </button>
-              </li>
-              <li>
-                <button className="btn-active">
-                  <p className="day">SEL</p>
-                  <p>11</p>
-                </button>
-              </li>
-              <li>
-                <button>
-                  <p className="day">SEL</p>
-                  <p>11</p>
-                </button>
-              </li>
-              <li>
-                <button>
-                  <p className="day">SEL</p>
-                  <p>11</p>
-                </button>
-              </li>
-              <li>
-                <button>
-                  <p className="day">SEL</p>
-                  <p>11</p>
-                </button>
-              </li>
-              <li>
-                <button>
-                  <p className="day">SEL</p>
-                  <p>11</p>
-                </button>
-              </li>
-              <li>
-                <button>
-                  <p className="day">SEL</p>
-                  <p>11</p>
-                </button>
-              </li>
-              <li>
-                <button>
-                  <p className="day">SEL</p>
-                  <p>11</p>
-                </button>
-              </li>
-              <li>
-                <button>
-                  <p className="day">SEL</p>
-                  <p>11</p>
-                </button>
-              </li>
-              <li>
-                <button>
-                  <p className="day">SEL</p>
-                  <p>11</p>
-                </button>
-              </li>
-              <li>
-                <button>
-                  <p className="day">SEL</p>
-                  <p>11</p>
-                </button>
-              </li>
-              <li>
-                <button>
-                  <p className="day">SEL</p>
-                  <p>11</p>
-                </button>
-              </li>
-            </ul>
+            {this.get2Week()}
           </div>
         </div>
         <div className="time-selector">
-          <button className="active">Lunch</button>
-          <button>Dinner</button>
+          <button onClick={this.setLunch} className={this.state.lunch ? 'active' : ''}>Lunch</button>
+          <button onClick={this.setDinner} className={this.state.lunch ? '' : 'active'}> Dinner</button>
         </div>
         <div className="main-container">
           <div className="date">
-            <p>Kamis. 13 Desember 2019</p>
+            <p>{this.getDateNow()}</p>
           </div>
           <div>
             <FoodCard title="Roasted Chicken with Scramble Egg" by="Kulina"

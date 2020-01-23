@@ -1,5 +1,6 @@
 @import 'variable';
 .header{
+    width: 100%;
     height: 120px;
     border-bottom: 1px solid $outline-color;
     position: fixed;
@@ -35,6 +36,8 @@
     fill: $button-color;
 }
 .date-container{
+    position: fixed;
+    width: 100%;
     overflow-x: auto;
     white-space: nowrap;
     & ul{
@@ -62,36 +65,6 @@
     .btn-active{
         background-color: $primary-color;
         color: #fff;
-    }
-    
-}
-.date-wrapper{
-    position: fixed;
-    left: 0;
-    width: 100%;
-    overflow-x: auto;
-    @include flexbox;
-    white-space: nowrap;
-    & ul{
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-    }
-    & li{
-        display: inline-block;
-        width: 50px;
-        height: 50px;
-        background-color: $primary-color;
-        & p:first-child{
-            font-size: $fontS;
-        }
-        & p:last-child{
-            font-size: $fontL;
-            font-weight: bolder;
-        }
-        & p{
-            color: #fff;
-        }
     }
 }
 .time-selector{
