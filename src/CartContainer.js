@@ -3,7 +3,7 @@ import './CartContainer.css';
 export default class CartContainer extends React.Component {
     render() {
         return (
-            <div className="cart-container">
+            <div className="cart-container" style={{ display: this.props.display }}>
                 <button className="cart-button">
                     <div>
                         <p><span>5</span> items | Rp <span>125,000</span></p>
