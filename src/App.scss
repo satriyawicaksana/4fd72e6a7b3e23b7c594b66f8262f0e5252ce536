@@ -1,7 +1,12 @@
 @import 'variable';
-/* .header{
-    height: 100px;
-} */
+.header{
+    height: 120px;
+    border-bottom: 1px solid $outline-color;
+    position: fixed;
+    top: 0;
+    background-color: #fff;
+    z-index: 2;
+}
 .address-container{
     @include flexbox($justify: start);
     padding: 10px 0;
@@ -20,6 +25,7 @@
         font-size: $fontL
     }
 }
+
 .back-arrow{
     @include flexbox;
     min-width: 50px;
@@ -28,7 +34,6 @@
 .down-arrow{
     fill: $button-color;
 }
-
 .date-container{
     overflow-x: auto;
     white-space: nowrap;
@@ -39,17 +44,18 @@
         display: inline-flex;
     }
     & button{
-        width: 16.67vw;
-        height: 16.67vw;
+        width: 46px;
+        height: 46px;
         border-radius: 50%;
         border: none;
+        margin: 0 4px;
         @include flexbox($dir: column);
         background-color: rgba(255, 255, 255, 0);
         & p:first-child{
             font-size: $fontS;
         }
         & p:last-child{
-            font-size: $fontL;
+            font-size: $fontM;
             font-weight: bolder;
         }
     }
@@ -59,7 +65,6 @@
     }
     
 }
-
 .date-wrapper{
     position: fixed;
     left: 0;
@@ -89,10 +94,13 @@
         }
     }
 }
-
 .time-selector{
+    position: absolute;
+    top: 120px;
+    width: 100%;
+    height: 60px;
     @include flexbox;
-    margin: 16px 0;
+    background-color: #fff;
     & button{
         width: 45%;
         padding: 8px 0;
@@ -110,8 +118,9 @@
         color: #fff;
     }
 }
-
 .main-container{
+    position: absolute;
+    top: 180px;
     padding:0 5%;
 }
 .date p{
@@ -119,104 +128,6 @@
     font-weight: bolder;
     margin: 16px 0;
 }
-.food-card{
-    border-radius: 16px;
-    @include shadow;
-}
-.food-content{
-    padding: 8px 16px 16px 16px;
-    & h3{
-        font-size: $fontXL;
-        color: $primary-color;
-        margin: 8px 0;
-    }
-    & div:nth-child(2){
-        & p {
-            font-size: $fontM;
-            color: $secondary-color;
-            margin-bottom: 16px;
-        }
-    }
-}
-.food-picture{
-    width: 100%;
-    height: 90vw;
-    border-radius: 16px 16px 0 0;
-    background-image: url("img/salad.jpg");
-    background-size: cover;
-    background-position: center center;
-}
-.price-container{
-    @include flexbox($justify:space-between);
-    & > p{
-        color: $primary-color;
-        font-weight: bolder;
-    }
-    & button{
-        @include flexbox($justify:space-between);
-        border: none;
-        background-color: $button-color;
-        padding: 8px 24px;
-        border-radius: 4px;
-        & p{
-            font-weight: bolder;
-            color: #fff;
-            font-size: $fontM;
-            margin-right: 4px;
-        }
-        & svg{
-            fill: #fff;
-        }
-    }
-}
-.rating-container{
-    @include flexbox($justify:flex-start);
-    & p{
-        font-size: $fontL;
-        margin-right: 8px;
-        color: $secondary-color;
-        font-weight: bolder;
-    }
-    & div{
-        @include flexbox;
-        height: 32px;
-        & svg{
-            fill: $button-color;
-        }
-    }
-}
-
-.cart-container{
-    @include flexbox($align: flex-start);
-    height: 80px;
-    z-index: 2;
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0),#ffffff);
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    & button{
-        border-radius: 8px;
-        width: 95%;
-        @include flexbox($justify:space-between);
-        padding: 16px;
-        border: none;
-        background-color: $cart-color;
-        & div p{
-            text-align: left;
-            color: #fff;
-            font-size: $fontM;
-        }
-        & div p:first-child{
-            font-weight: bolder;
-            font-size: $fontL;
-        }
-        & svg{
-            fill: #fff;
-        }
-    }
-}
-
 .search-container{
     background-color: rgba(0,0,0,0.5);
     height: 100vh;
@@ -226,14 +137,14 @@
     z-index: 10;
 }
 .search-wrapper{
+    height: 85vh;
     background-color: #fff;
     position: fixed;
     bottom: 0;
     right: 0;
     left: 0;
     border-radius: 8px 8px 0 0;
-    @include flexbox($dir:column);
- 
+    @include flexbox($dir:column, $justify:flex-start);
 }
 .close-div{
     @include flexbox($justify:flex-end);
@@ -246,7 +157,7 @@
     margin: 8px 16px;
     color: $primary-color;
 }
-.search-input-wrapper, .result-wrapper{
+.search-input-wrapper{
     @include flexbox;
     padding: 0 8px;
     margin: 8px 0;
@@ -277,8 +188,8 @@
     outline: none;
     border: none;
     font-size: $fontXL;
-    font-weight: bolder;
     color: $primary-color;
+    caret-color: $button-color;
 }
 .result-address{
     border-bottom: 1px solid $outline-color;
