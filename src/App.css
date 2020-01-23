@@ -177,6 +177,10 @@
   border-radius: 8px 0 0 8px;
 }
 
+.time-selector button:last-child {
+  border-radius: 0 8px 8px 0;
+}
+
 .time-selector .active {
   background-color: #424749;
   color: #fff;
