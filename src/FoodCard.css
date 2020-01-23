@@ -23,7 +23,7 @@
 
 .food-picture {
   width: 100%;
-  height: 90vw;
+  height: 30vh;
   border-radius: 16px 16px 0 0;
   background-image: url("img/salad.jpg");
   background-size: cover;
