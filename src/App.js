@@ -43,7 +43,7 @@ class App extends React.Component {
     const element = [];
     let dateNow = new Date();
     let firstDay = true;
-    for (let i = 0; i < 12; i++) {
+    for (let i = 0; i < 14; i++) {
       element.push(
         <li key={i}>
           <button className={firstDay && (dateNow.getDay() !== 0 || dateNow.getDay() !== 6) ? 'btn-active' : ''} disabled={dateNow.getDay() === 0 || dateNow.getDay() === 6 ? true : false}>
