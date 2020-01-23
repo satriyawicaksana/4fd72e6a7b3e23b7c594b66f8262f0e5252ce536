@@ -4,6 +4,11 @@ import ResultItem from './ResultItem';
 import FoodCard from './FoodCard';
 import './App.css';
 
+//image
+import Food1 from './img/salad.jpg';
+import Food2 from './img/cover-chinese-combo-min.jpg';
+import Food3 from './img/nasi-kucing.jpg'
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -133,8 +138,18 @@ class App extends React.Component {
             <p>Kamis. 13 Desember 2019</p>
           </div>
           <div>
-            <FoodCard addToCart={this.renderCart}></FoodCard>
-            <FoodCard></FoodCard>
+            <FoodCard title="Roasted Chicken with Scramble Egg" by="Kulina"
+              location="Uptown Lunch" price="35,000" imageLink={Food1}
+              addToCart={this.renderCart}></FoodCard>
+            <FoodCard title="Combo Chinese Lunch + Sari Kedondong" by="Kulina"
+              location="Uptown Lunch" price="30,000" imageLink={Food2}
+              addToCart={this.renderCart}></FoodCard>
+            <FoodCard title="Nasi Kucing" by="Kulina"
+              location="Kucink Oren" price="15,000" imageLink={Food3}
+              addToCart={this.renderCart}></FoodCard>
+            <FoodCard title="Roasted Chicken with Scramble Egg" by="Kulina"
+              location="Uptown Lunch" price="35,000" imageLink={Food1}
+              addToCart={this.renderCart}></FoodCard>
           </div>
         </div>
         <CartContainer display={this.state.displayCart}></CartContainer>

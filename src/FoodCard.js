@@ -4,8 +4,10 @@ export default class FoodCard extends React.Component {
     render() {
         return (
             <div className="food-card">
-                <div className="food-picture"></div>
-                <div className="food-content">
+                <div className="food-picture" style={{
+                    backgroundImage: "url(" + this.props.imageLink + ")"
+                }}></div>
+                < div className="food-content" >
                     <div className="rating-container">
                         <p>3.5 </p>
                         <div>
@@ -17,11 +19,11 @@ export default class FoodCard extends React.Component {
                         </div>
                     </div>
                     <div>
-                        <h3>Roasted Chicken with Scramble Egg</h3>
-                        <p>by <span>Kulina</span> &bull; <span>Uptown Lunch</span></p>
+                        <h3>{this.props.title}</h3>
+                        <p>by {this.props.by} &bull; {this.props.location}</p>
                     </div>
                     <div className="price-container">
-                        <p>Rp <span>35,000</span></p>
+                        <p>Rp {this.props.price} </p>
                         <button onClick={this.props.addToCart}>
                             <p>ADD </p>
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z" /><path d="M18 13h-5v5c0 .55-.45 1-1 1s-1-.45-1-1v-5H6c-.55 0-1-.45-1-1s.45-1 1-1h5V6c0-.55.45-1 1-1s1 .45 1 1v5h5c.55 0 1 .45 1 1s-.45 1-1 1z" /></svg>
