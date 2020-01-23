@@ -130,7 +130,7 @@
 }
 
 .time-selector {
-  position: absolute;
+  position: fixed;
   top: 120px;
   width: 100%;
   height: 60px;
@@ -148,6 +148,7 @@
       -ms-flex-align: center;
           align-items: center;
   background-color: #fff;
+  z-index: 1;
 }
 
 .time-selector button {
@@ -179,6 +180,20 @@
 .time-selector .active {
   background-color: #424749;
   color: #fff;
+}
+
+.scroll-visible {
+  visibility: visible;
+  -webkit-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+}
+
+.scroll-hidden {
+  visibility: hidden;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  -webkit-transform: translate(0, -100%);
+          transform: translate(0, -100%);
 }
 
 .main-container {

@@ -17,8 +17,23 @@ class App extends React.Component {
       displaySearch: false,
       searchValue: '',
       displayResult: false,
-      lunch: true
+      lunch: true,
+      showTimeSelector: true,
+      scrollPos: 0
     }
+  }
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll);
+  }
+  componentWillMount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  }
+  handleScroll = () => {
+    const { scrollPos } = this.state;
+    this.setState({
+      scrollPos: document.body.getBoundingClientRect().top,
+      showTimeSelector: document.body.getBoundingClientRect().top > scrollPos
+    });
   }
   bulan = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
   hari = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
@@ -89,7 +104,7 @@ class App extends React.Component {
             {this.get2Week()}
           </div>
         </div>
-        <div className="time-selector">
+        <div className={this.state.showTimeSelector ? "time-selector scroll-visible" : "time-selector scroll-hidden"} >
           <button onClick={this.setLunch} className={this.state.lunch ? 'active' : ''}>Lunch</button>
           <button onClick={this.setDinner} className={this.state.lunch ? '' : 'active'}> Dinner</button>
         </div>
