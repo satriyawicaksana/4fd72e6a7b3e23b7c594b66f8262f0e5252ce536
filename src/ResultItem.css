@@ -15,4 +15,10 @@
   padding: 0 8px;
   margin: 8px 0;
 }
+
+.result-address {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
 /*# sourceMappingURL=ResultItem.css.map */

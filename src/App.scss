@@ -10,7 +10,7 @@
 }
 .address-container{
     @include flexbox($justify: start);
-    padding: 10px 0;
+    padding: 8px 0;
     & p{
         color: $secondary-color;
         font-size: $fontS;
@@ -104,7 +104,7 @@
 .main-container{
     position: absolute;
     top: 180px;
-    padding:0 5%;
+    padding:0 16px;
 }
 .date p{
     font-size: $fontXL;

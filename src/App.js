@@ -46,7 +46,7 @@ class App extends React.Component {
     for (let i = 0; i < 12; i++) {
       element.push(
         <li key={i}>
-          <button className={firstDay ? 'btn-active' : ''} disabled={dateNow.getDay() === 0 || dateNow.getDay() === 6 ? true : false}>
+          <button className={firstDay && (dateNow.getDay() !== 0 || dateNow.getDay() !== 6) ? 'btn-active' : ''} disabled={dateNow.getDay() === 0 || dateNow.getDay() === 6 ? true : false}>
             <p>{this.hariSingkat[dateNow.getDay()]}</p>
             <p>{dateNow.getDate()}</p>
           </button>
@@ -141,9 +141,11 @@ class App extends React.Component {
               <input className="search-input" type="text" value={this.state.searchValue} onChange={this.handleChange.bind(this)} />
             </div>
             <div style={{ display: this.state.displayResult ? 'block' : 'none' }}>
-              <ResultItem></ResultItem>
-              <ResultItem></ResultItem>
-              <ResultItem></ResultItem>
+              <ResultItem name="Kulina" address="Gedung Kulina Lt. 3, Jl. Tulodong Atas No.28, RT.6/RW.3, Senayan, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12190"></ResultItem>
+              <ResultItem name="Plaza Festival Mall Kuningan" address="Jalan Haji R. Rasuna Said Kav. C 22, Karet Kuningan, Kecamatan Setiabudi, Daerah Khusus Ibukota Jakarta 12940"></ResultItem>
+              <ResultItem name="Setiabudi One" address="PT. Jakarta Setiabudi Internasional, Setiabudi 2 Lt.3A,Jalan Haji R. Rasuna Said, Kav.62, Karet Kuningan, Kecamatan Setiabudi, RT.18/RW.2, Kuningan, Karet Kuningan, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12920"></ResultItem>
+              <ResultItem name="Setiabudi Residence" address="Jl. Setia Budi Sel. Raya No.1, RT.6/RW.7, Kuningan, Karet Kuningan, Kecamatan Setiabudi, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12920"></ResultItem>
+              <ResultItem name="Epicentrum XXI" address="Jl. H. R. Rasuna Said, RT.2/RW.5, Karet Kuningan, Setia Budi, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12940"></ResultItem>
             </div>
           </div>
         </div>
