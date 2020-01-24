@@ -126,7 +126,14 @@
 
 .date-container .btn-active {
   background-color: #424749;
+}
+
+.date-container .btn-active p {
   color: #fff;
+}
+
+button, input {
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 .time-selector {
@@ -210,6 +217,14 @@
   font-size: 20px;
   font-weight: bolder;
   margin: 16px 0;
+}
+
+.days {
+  color: #6e7679;
+}
+
+.dates {
+  color: #424749;
 }
 
 .search-container {
@@ -331,20 +346,5 @@
   font-size: 20px;
   color: #424749;
   caret-color: #f9423a;
-}
-
-.result-address {
-  border-bottom: 1px solid #f1f1f2;
-}
-
-.result-address p:first-child {
-  font-size: 20px;
-  font-weight: bolder;
-  color: #424749;
-}
-
-.result-address p:last-child {
-  font-size: 16px;
-  color: #424749;
 }
 /*# sourceMappingURL=App.css.map */

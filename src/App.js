@@ -47,8 +47,8 @@ class App extends React.Component {
       element.push(
         <li key={i}>
           <button className={firstDay && (dateNow.getDay() !== 0 || dateNow.getDay() !== 6) ? 'btn-active' : ''} disabled={dateNow.getDay() === 0 || dateNow.getDay() === 6 ? true : false}>
-            <p>{this.hariSingkat[dateNow.getDay()]}</p>
-            <p>{dateNow.getDate()}</p>
+            <p className="days">{this.hariSingkat[dateNow.getDay()]}</p>
+            <p className="dates">{dateNow.getDate()}</p>
           </button>
         </li>
       );

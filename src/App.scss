@@ -64,8 +64,13 @@
     }
     .btn-active{
         background-color: $primary-color;
-        color: #fff;
+        & p{
+            color: #fff;
+        }
     }
+}
+button, input{
+    font-family:'Nunito Sans', sans-serif;
 }
 .time-selector{
     position: fixed;
@@ -113,6 +118,12 @@
     font-size: $fontXL;
     font-weight: bolder;
     margin: 16px 0;
+}
+.days{
+    color: $secondary-color;
+}
+.dates{
+    color: $primary-color;
 }
 .search-container{
     background-color: rgba(0,0,0,0.5);
@@ -176,16 +187,4 @@
     font-size: $fontXL;
     color: $primary-color;
     caret-color: $button-color;
-}
-.result-address{
-    border-bottom: 1px solid $outline-color;
-    & p:first-child{
-        font-size: $fontXL;
-        font-weight: bolder;
-        color: $primary-color;
-    }
-    & p:last-child{
-        font-size: $fontL;
-        color: $primary-color;
-    }
 }
